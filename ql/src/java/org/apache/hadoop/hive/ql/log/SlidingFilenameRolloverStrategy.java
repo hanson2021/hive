@@ -72,7 +72,10 @@ public class SlidingFilenameRolloverStrategy
     String pattern = rollingFileManager.getPatternProcessor().getPattern();
     return getLogFileName(pattern);
   }
-
+  @Override 
+  public void clearCurrentFileName() {
+    // no rename is needed
+  }
   /**
    * @return Mangled file name formed by appending the current timestamp
    */
